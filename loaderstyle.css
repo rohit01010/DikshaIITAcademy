@@ -1,0 +1,12 @@
+.preloaderBox{
+  width: 100%; 
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  background: url('images/loading2.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #1c273a;  
+  z-index: 9999999999999;
+}

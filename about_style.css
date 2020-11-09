@@ -1,0 +1,641 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #222;
+}
+.navbar{
+	position: sticky;
+	top: -1px;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 10;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+    background-color: #232323; 
+	padding: 0 20px;
+	margin-top: 30px; 
+}
+.navbar.back{
+  border-bottom: 1px solid #525252; 
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+	height: 70px;
+}
+.navbar .logo a{
+	display: inline-block;
+	font-size: 2.3em;
+	font-weight: 900;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 4em;
+	padding: 5px;
+	letter-spacing: 2px;
+	text-align: left;
+	text-decoration: none;
+	color: #fff;
+} 
+.navbar .openBtn{
+	display: none;
+	position: absolute;
+	right: 40px;
+	top: 15px;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	background: url("images/menu.png");
+	background-size: 30px;
+	background-position: center;
+	background-repeat: no-repeat;
+	filter: invert(100%); 
+}
+.navbar .openBtn.active{
+	background: url("images/close.png");
+	background-size: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+	filter: invert(1);
+}
+.navbar ul{
+	display: inline-flex;
+	position: relative;
+    right: 0;
+    top: 0;
+    list-style-type: none;
+}
+
+.head{
+    position: relative;
+}
+.head h1{
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.head h1 span{
+    font-size: 1.5em;
+}
+section{
+    width: 100%;
+    min-height: 60vh;
+    padding: 30px;
+}
+.box{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box .imgBox{
+    width: 500px;
+    height: 580px;
+    overflow: hidden;
+    margin: 0 50px;
+    box-shadow: 5px 5px 35px rgba(0,0,0,0.5);
+}
+.box .imgBox img{
+    height: calc(100% + 10px);
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.box .content,.box2 .content,.box3 .content{
+    max-width: 500px;
+    height: 580px;
+    padding: 50px;
+    background: #3f3f3f;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 35px rgba(0,0,0,0.5);
+}
+.box2,.box3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-80px);
+}
+.box2 .content,.box3 .content{
+    max-width: 100%;
+    height: 50vh;
+}
+.box3{
+    min-height: 90vh;
+}
+.box3 .content{
+    min-height: 80vh;
+    transform: translateY(50px);
+    flex-direction: column;
+}
+.box3 .content h2{
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    text-indent: -20px;
+}
+
+.circles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.circles .card{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* align-self: center; */
+    border-radius: 4px;
+    text-align: center;
+    overflow: hidden; 
+    transition: 0.5s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+.circles .card:nth-child(1):hover{
+    background: #ff4545;
+}
+.circles .card:nth-child(2):hover{
+    background: #2a6fdb;
+}
+.circles .card:nth-child(3):hover{
+    background: #8a00d4;
+}
+.circles .card::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(225,225,225,0.03);
+    z-index: 1;
+}
+.circles .card .box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    overflow: hidden;
+}
+.circles .card .box h4{
+    font-size: 2.5em;
+    color: #fff;    
+    transform-origin: bottom;
+    transform: translateY(80px);
+    transition: 0.5s;
+}
+.circles .card:nth-child(2) .box h4{
+    transform: translateY(100px);
+}
+.circles .card:nth-child(3) .box h4{
+    transform: translateY(40px);
+}
+.circles .card:hover .box h4{
+    font-size: 1.5em;
+    transform: translateY(-10px);
+}
+.circles .card .box p{
+    transform-origin: bottom;
+    transform: translateY(200px) scale(0);
+    font-size: 14px;
+    color: #fff;    
+    transition: 0.5s;
+}
+.circles .card:hover .box p{
+    transform-origin: bottom;
+    transform: translateY(0) scale(1);
+}
+
+.contactBox{
+  width: 100%;
+  min-height: 30vh;
+  background: #3170d6/*#07128f*/;
+  color: #fff;
+  padding: 30px 50px;
+  letter-spacing: 2px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact{
+  max-width: 35%;
+  left: 0;
+}
+.contact h1{
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 2em;
+  /* user-select: none; */
+}
+.contact a{
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  margin: 10px;
+}
+.contact img{
+  filter: invert(1);
+  width: 20px;
+  user-select: none;
+}
+
+.formBox{
+  position: relative;
+  min-width: 750px;
+  height: 400px;
+  margin: 0px;
+  background-color: transparent;
+}
+.formBox h1{
+  color: #fff;
+  font-size: 2em; 
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.formBox .input{
+  position: relative;
+}
+.formBox .input:nth-child(5){
+  position: absolute;
+  left: 380px;
+  top: 50%;
+  transform: translateY(-55%);
+}
+.formBox .input label{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  font-size: 15px;
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  padding: 0px 5px;
+  border-radius: 2px;
+  pointer-events: none;
+  transition: 0.3s;
+  transition-timing-function: ease;
+}
+.formBox .input input,
+.formBox .input textarea{
+  margin: 20px 0px;
+  min-width: 350px;
+  max-width: 600px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none; 
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+}
+.formBox .input textarea{
+  resize: none;
+}
+
+.formBox .input textarea:focus ~ label,
+.formBox .input textarea:valid ~ label,
+.formBox .input input:focus ~ label,
+.formBox .input input:valid ~ label{
+  top: -5px;
+  left: 0px;
+  transform: scale(0.9);
+  background: #3170d6;
+}
+.formBox input[type="submit"]{
+  background-color: transparent;
+  padding: 7px 20px;
+  margin-top: 15px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  border: none; 
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+  transition: 0.5s;
+}
+.formBox input[type="submit"]:hover{
+  background-color: #ff01b3;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+footer{
+	width: 100%;
+	padding: 30px;
+	background: #222222;
+	color: #fff;
+	user-select: none;
+}
+a.image{
+    text-decoration: none;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 999999999;
+    transform: scale(0.8);
+}
+a.image img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+@media only screen and (max-width: 1000px){
+    .navbar .openBtn{
+       display: inline-block;
+       z-index: 11;
+    }
+    .navbar{
+        flex-direction: column;
+    }
+     .navbar .logo{
+         width: 100%;
+    }	
+    .navbar ul{
+        display: none;
+        position: fixed;
+        width: 100%;
+        min-height: 100vh;
+       align-items: center;
+       justify-content: center;
+        flex-direction: column;
+        background-color: #222;
+        z-index: 10;
+        opacity: 0;
+        transition: 0.3s;
+   }
+    .navbar.active ul{
+        display: flex;
+        opacity: 1;
+    }
+   .navbar ul li a{
+       border: none;
+       font-size: 1em;
+       margin: 15px; 
+       text-align: center;  
+   }
+   section{
+       padding: 0 30px;
+   }
+   .box{
+       min-height: 700px;
+   }
+   .box .imgBox{
+       max-width: 500px;
+       height: 500px;
+       margin: 0;
+       box-shadow: none;
+   }
+   .box .content{
+       max-width: 400px;
+       height: 500px;
+       padding: 20px;
+       margin: 0;
+       overflow: hidden;
+       box-shadow: none;
+   }
+   .box2{
+       transform: translateY(-20px);
+   }
+   .box3{
+       transform: translateY(0px);
+   }
+   .box2 .content{
+       width: 100%;
+       height: 500px;
+       padding: 20px;
+       overflow: hidden;
+       box-shadow: none;
+   }
+   .box3 .content{
+       min-height: 750px;
+       transform: translateY(0);
+       flex-direction: column;
+       width: 100%;
+       padding: 20px;
+       overflow: hidden;
+       box-shadow: none;
+   }
+   .box3 .content h2{
+       margin: 0px;
+       text-indent: 0px;
+   }
+.contactBox{
+    flex-direction: column;
+    justify-content: left;
+}
+.contact{
+    max-width: 100%;
+    min-width: 100%;
+    margin-bottom: 50px; 
+}
+.formBox{
+    position: relative;
+    min-width: 100%;    
+}
+}
+@media only screen and (max-width: 800px){
+.formBox{
+    height: auto;
+}   
+.formBox .input:nth-child(5){
+    position: relative;
+    left: 0px;
+    top: 0%;
+    transform: translateY(0%);
+}
+}
+@media only screen and (max-width: 600px){
+.navbar.back {
+    height: 50px;
+}
+.navbar .openBtn{
+    top: 10px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-size: 20px;
+}
+.navbar .logo a{
+    font-size: 1.5em;
+    font-weight: 600;
+    width: 2.5em;
+    padding: 8px 5px;
+    letter-spacing: 2px;
+}
+.head h1{
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.head h1 span{
+    font-size: 1em;
+}
+section{
+    min-height: 100vh;
+    padding: 10px;
+    overflow: hidden;
+}
+.box{
+    height: 900px;
+    flex-direction: column;
+}
+.box .imgBox{
+    max-width: 300px;
+    height: 300px;
+    margin: 0 0 20px 0;
+    box-shadow: none;
+}
+.box .content{
+    max-width: 500px;
+    height: 500px;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: none;
+}
+.box2{
+    transform: translateY(-20px);
+}
+.box3{
+    transform: translateY(0px);
+}
+.box2 .content{
+    max-width: 100%;
+    max-width: 500px;
+    height: 750px;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: none;
+}
+.box3 .content{
+    min-height: 1050px;
+    transform: translateY(0);
+    flex-direction: column;
+    max-width: 500px;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: none;
+}
+.box3 .content h2{
+    margin: 0px;
+    text-indent: 0px;
+}
+
+footer{
+    padding: 20px;
+    font-size: 0.8em; 
+}    
+.contactBox {
+  padding: 10px 20px;
+}
+.contact{
+  padding: 0px;
+  letter-spacing: 1px;
+  margin-bottom: 0px; 
+}
+.contact h1{
+  font-size: 1.5em;
+}
+.contact a{
+  font-size: 0.8em;
+}
+.contact img{
+  width: 15px;
+}
+a.image{
+  bottom: 0px;
+  right: 0px;
+}
+.formBox h1{
+  font-size: 1.5em; 
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.formBox input[type="submit"]{
+  margin-top: 0px;
+}
+}
+@media only screen and (max-width: 400px){
+    .navbar .openBtn{
+        right: 20px;
+        top: 10px;
+        width: 30px;
+        height: 30px;
+        background-size: 20px;
+    }
+    .navbar .logo a{
+        font-size: 1.5em;
+        font-weight: 600;
+        width: 2.5em;
+        padding: 8px 5px;
+        letter-spacing: 2px;
+    }
+    h1{
+        font-size: 2em;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+    .head h1 span{
+        font-size: 1.5em;
+    }
+    .box{
+        height: 900px;
+    }
+    .box .content{
+        height: 500px;
+    }
+    .box2 .content{
+        max-width: 100%;
+        height: 850px;
+    }
+    .box3 .content{
+        min-height: 1200px;
+    }
+}     
+@media only screen and (max-width: 350px){
+    .box .content{
+        height: 700px;
+    }
+    .box2 .content{
+        margin-top: 40px; 
+        height: 950px;
+    }
+    .box3 .content{
+        min-height: 1400px;
+    }
+    .contact{
+        padding: 15px 15px;
+    }
+}
