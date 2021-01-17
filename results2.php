@@ -13,58 +13,30 @@
 </head>
 <body onload="preloader()">
 
-<section class=".preloaderBox"></section>
-    <div class="navbar">
-        <div class="logo"><a href="#">DIKSHA</a></div>
-        <a class="openBtn" onclick="toggleMenu()"></a>
-        <ul>
-            <li class="btn">
-                <a href="index.php">
-                    <span class="left"></span>
-                    <span class="top"></span>   
-                    <span class="right"></span>
-                    <span class="bottom"></span>
-                    HOME
-                </a>
-            </li>
-            <li class="btn">
-                <a href="admission.php">
-                    <span class="left"></span>
-                    <span class="top"></span>   
-                    <span class="right"></span>
-                    <span class="bottom"></span>
-                    ADMISSIONS
-                </a>
-            </li>
-            <li class="btn">
-                <a href="results.php">
-                    <span class="left"></span>
-                    <span class="top"></span>   
-                    <span class="right"></span>
-                    <span class="bottom"></span>
-                    RESULTS
-                </a>
-            </li>
-            <li class="btn">
-                <a href="gallery.php">
-                    <span class="left"></span>
-                    <span class="top"></span>   
-                    <span class="right"></span>
-                    <span class="bottom"></span>
-                    GALLERY
-                </a>
-            </li>
-            <li class="btn">
-                <a href="about.php">
-                    <span class="left"></span>
-                    <span class="top"></span>   
-                    <span class="right"></span>
-                    <span class="bottom"></span>
-                    ABOUT US
-                </a>
-            </li>
-        </ul>
-    </div>
+<!-- <section class=".preloaderBox"></section> -->
+<div class="preloaderBox">
+    <div class='body'>
+        <span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </span>
+        <div class='base'>
+            <span></span>
+            <div class='face'></div>
+        </div>
+  </div>
+  <div class='longfazers'>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <h1>Loading</h1>
+</div>
+
+<?php include 'navbar.php'?> 
     <!-- 
         changes made in list block
         - attached link address
@@ -187,38 +159,8 @@
     </div>
 </div> 
 
-<section class="contactBox">
-    <div class="contact">
-        <h1>CONTACT US</h1><br>
-        <a href="mailto:dikshaiitacademy@gmail.com"><img src="images/mail.png"> - dikshaiitacademy@gmail.com</a><br>
-        <a href="tel:8318494801"><img src="images/call.png"> <img src="images/whatsapp.png" style="width: 25px;transform: translateY(3px);"> - 8318494801</a><br>
-        <a href="https://goo.gl/maps/9mGWfZKxzHVSYzdX8" target="blank"><img src="images/locate.png"> - Diksha IIT Academy, Somesh colony, Vishnu Nagar, Nanded, Maharashtra 431601</a><br>
-    </div>
-    <form class="formBox" method="post" action="index.php">
-        <h1>Leave a message</h1>
-        <div class="input">
-            <input name="sender" type="text" required=""><br>
-            <label>Name</label>   	   
-        </div>
-        <div class="input">	
-            <input name="senderEmail" type="email" required=""><br>
-            <label>Email</label>
-        </div>
-        <div class="input">	
-            <input name="senderPhone" type="tel" required=""><br>
-        <label>Phone Number</label>
-        </div>
-        <div class="input">
-            <textarea name="message" rows="8" cols="40" required></textarea><br>
-            <label>Message</label>   	    
-        </div>
-        <input type="submit" name="submit" value="SEND">
-    </form>
-</section>
-<footer>
-    <p>Copyright © 2020 Diksha Academy. All Rights Reserved.</p>
-    <p>-Developed By <a href="" style="color: #fff; text-decoration: none;">Rohit and Nagsen</a></p>
-</footer>
+<?php include 'contactBox.php' ?>
+
 <a class="image" href="https://api.whatsapp.com/send?phone=8318494801&text=&source=&data=&app_absent="><img src="images/whatsappimg.png"></a>       
 <script src="script.js"></script>
 </body>

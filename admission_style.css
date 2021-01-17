@@ -1,307 +1,336 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Poppins;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
+  z-index: 0;
 }
-body{
-    width: 100%;
-    min-height: 100vh;
-    background-color: #222;
-}
-.navbar{
-	position: sticky;
-	top: -1px;
-	display: flex;
-	width: 100%;
-	align-items: center;
-	justify-content: space-between;
-	z-index: 10;
-    transition: 0.5s;
-    transition-timing-function: ease-in-out;
-    background-color: #232323; 
-	padding: 0 20px;
-	margin-top: 30px; 
-}
-.navbar.back{
-  border-bottom: 1px solid #525252; 
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-	height: 70px;
-}
-.navbar .logo a{
-	display: inline-block;
-	font-size: 2.3em;
-	font-weight: 900;
-	position: relative;
-	left: 0px;
-	top: 0px;
-	width: 4em;
-	padding: 5px;
-	letter-spacing: 2px;
-	text-align: left;
-	text-decoration: none;
-	color: #fff;
-} 
-.navbar .openBtn{
-	display: none;
-	position: absolute;
-	right: 40px;
-	top: 15px;
-	width: 40px;
-	height: 40px;
-	cursor: pointer;
-	background: url("images/menu.png");
-	background-size: 30px;
-	background-position: center;
-	background-repeat: no-repeat;
-	filter: invert(100%); 
-}
-.navbar .openBtn.active{
-	background: url("images/close.png");
-	background-size: 40px;
-	background-position: center;
-	background-repeat: no-repeat;
-	filter: invert(1);
-}
-.navbar ul{
-	display: inline-flex;
-	position: relative;
-    right: 0;
-    top: 0;
-    list-style-type: none;
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #222;
 }
 
-section{
-    width: 100%;
-    min-height: 60vh;
-    padding: 30px;
-}
-.courses,.techMeth{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-.courses h1,.techMeth  h1{
-    text-align: center;
-    color: #03a9f4;
-    font-size: 3em;
-    line-height: 100px;
-}
-.courses .cardContainer,.techMeth .cardContainer{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: calc(100vh - 200px);
-    justify-content: center;
-    align-items: center;
-}
-.courses .cardContainer .card,.techMeth .cardContainer .card{
-    width: 300px;
-    height: 400px; 
-    margin: 0 20px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: linear-gradient(-45deg,#3e3b3f,#2d2a2e);
-    border: 2px solid #1e1f23;
-    border-radius: 15px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
-    z-index: 5;     
-    transition: 0.5s;
-}
-.courses .cardContainer .card:hover,.techMeth .cardContainer .card:hover{
-    transform: scale(1.05);
-    background: #2a6fdb;
-}
-.courses .cardContainer .card:hover:nth-child(2),.techMeth .cardContainer .card:hover:nth-child(2){
-    transform: scale(1.05);
-    background: #8a00d4;
-}
-.courses .cardContainer .card:hover:nth-child(3),.techMeth .cardContainer .card:hover:nth-child(3){
-    transform: scale(1.05);
-    background: #ff4545;
-}
-.courses .cardContainer .card:hover:nth-child(4),.techMeth .cardContainer .card:hover:nth-child(4){
-    transform: scale(1.05);
-    background: #58b368;
-}
-.courses .cardContainer .card.color:hover,.techMeth .cardContainer .card.color:hover{
-    transform: scale(1.05);
-    background: #aa00ff;
-}
-.courses .cardContainer .card.color:hover:nth-child(2),.techMeth .cardContainer .card.color:hover:nth-child(2){
-    transform: scale(1.05);
-    background: #e54304;
-}
-.courses .cardContainer .card.color:hover:nth-child(3),.techMeth .cardContainer .card.color:hover:nth-child(3){
-    transform: scale(1.05);
-    background: #ff1744;
-}
-.courses .cardContainer .card .imgBox,.techMeth .cardContainer .card .imgBox{
-    width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.courses .cardContainer .card .imgBox .icon,.techMeth .cardContainer .card .imgBox .icon{
-    color: #fff;
-    font-size: 80px;
-}
-.courses .cardContainer .card .content,.techMeth .cardContainer .card .content{
-    color: #fff;
-    margin: 20px 0;
-    height: calc(100% - 150px);
-    display: flex;
-    flex-direction: column;
-}
-.courses .cardContainer .card .content h3,.techMeth .cardContainer .card .content h3{
-    line-height: 20px;
-    text-align: center;
-}
-.courses .cardContainer .card .content p,.techMeth .cardContainer .card .content p{
-    font-size: 14px;
-    text-align: center;
-    margin: 10px;
+#particles-js {
+  height: 100vh;
+  background-color: #232323;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-.some{
-    min-height: 80vh;
-    background: #333;
-    margin: 50px;
-    width: calc(100% - 100px);
-    display: flex;
-    align-items: center;
+.navbar {
+  position: sticky;
+  top: -1px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  transition: 0.5s;
+  transition-timing-function: ease-in-out;
+  background-color: transparent;
+  padding: 0 20px;
+  margin-top: 30px;
 }
-.some .content{
-    max-width: 800px;   
-    color: #fff; 
-    margin: 0 100px;
+.navbar.back {
+  background-color: #222;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
+  height: 70px;
 }
-.some .content h1{
-    transform: translate(-30px,-20px);
-    font-size: 3em;
+.navbar .logo a {
+  display: inline-block;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: auto;
+  height: 50px;
+  padding: 5px;
+  letter-spacing: 2px;
+  text-align: left;
+  text-decoration: none;
+  color: #fff;
 }
-.some .imgBox{
-    width: 300px;
+.navbar .logo img {
+  height: 100%;
 }
-.some .imgBox img{
-    width: 100%;
+.navbar .openBtn {
+  display: none;
+  position: absolute;
+  right: 40px;
+  top: 15px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: url("images/menu.png");
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: invert(100%);
 }
-
-.circles{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-    flex-wrap: wrap;
+.navbar .openBtn.active {
+  background: url("images/close.png");
+  background-size: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: invert(1);
 }
-
-.circles .card{
-    position: relative;
-    width: 250px;
-    height: 300px;
-    margin: 20px;
-    background: linear-gradient(0deg,#1b1b1b,#222);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* align-self: center; */
-    border-radius: 4px;
-    text-align: center;
-    /* overflow: hidden; */
-    transition: 0.5s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-.circles .card:hover{
-    transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 25px 45px rgba(0,0,0,0.6);
-}
-
-.circles .card::before{
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(225,225,225,0.03);
-    z-index: 1;
-}
-.percent{   
-    position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    box-shadow: inset 0 0 50px #000;
-    background: #222;
-    transform: translateX(30%);
-    z-index: 1;
-}
-.percent .number{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: #fff;
-    letter-spacing: 2px;
-}
-.text{
-    position: relative;
-    color: #fff;
-    font-weight: 300;
-    letter-spacing: 1px;
-    transform: translateY(20px);
-}
-svg{
-    position: relative;
-    width: 150px;
-    height: 150px;
-    z-index: 100;
-}
-svg circle{
-    width: 100%;
-    height: 100%;
-    fill: none;
-    stroke: #191919;
-    stroke-width: 10;
-    stroke-linecap: round;
-    transform: translate(5px,5px);
-    transition: 2s;
-}
-svg circle:nth-child(2){
-   stroke-dasharray: 700;
-   stroke-dashoffset: 220;
-}
-.card:nth-child(1) svg circle:nth-child(2){
-    stroke: #00ff43;
-}
-.card:nth-child(2) svg circle:nth-child(2){
-    stroke: #00a1ff;
-}
-.card:nth-child(3) svg circle:nth-child(2){
-    stroke: #ff04f2;
-}
-.card:nth-child(4) svg circle:nth-child(2){
-    stroke: #07128f;
-}
-.card:nth-child(5) svg circle:nth-child(2){
-    stroke: #ff0;
+.navbar ul {
+  display: inline-flex;
+  position: relative;
+  right: 0;
+  top: 0;
+  list-style-type: none;
 }
 
+section {
+  width: 100%;
+  min-height: 60vh;
+  padding: 30px;
+}
+.courses,
+.techMeth {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.courses h1,
+.techMeth h1 {
+  text-align: center;
+  color: #03a9f4;
+  font-size: 3em;
+  line-height: 100px;
+}
+.courses .cardContainer,
+.techMeth .cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: calc(100vh - 200px);
+  justify-content: center;
+  align-items: center;
+}
+.courses .cardContainer .card,
+.techMeth .cardContainer .card {
+  width: 300px;
+  height: 400px;
+  margin: 0 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(-45deg, #3e3b3f, #2d2a2e);
+  border: 2px solid #1e1f23;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  transition: 0.5s;
+}
+.courses .cardContainer .card:hover,
+.techMeth .cardContainer .card:hover {
+  transform: scale(1.05);
+  background: #2a6fdb;
+}
+.courses .cardContainer .card:hover:nth-child(2),
+.techMeth .cardContainer .card:hover:nth-child(2) {
+  transform: scale(1.05);
+  background: #8a00d4;
+}
+.courses .cardContainer .card:hover:nth-child(3),
+.techMeth .cardContainer .card:hover:nth-child(3) {
+  transform: scale(1.05);
+  background: #ff4545;
+}
+.courses .cardContainer .card:hover:nth-child(4),
+.techMeth .cardContainer .card:hover:nth-child(4) {
+  transform: scale(1.05);
+  background: #58b368;
+}
+.courses .cardContainer .card.color:hover,
+.techMeth .cardContainer .card.color:hover {
+  transform: scale(1.05);
+  background: #aa00ff;
+}
+.courses .cardContainer .card.color:hover:nth-child(2),
+.techMeth .cardContainer .card.color:hover:nth-child(2) {
+  transform: scale(1.05);
+  background: #e54304;
+}
+.courses .cardContainer .card.color:hover:nth-child(3),
+.techMeth .cardContainer .card.color:hover:nth-child(3) {
+  transform: scale(1.05);
+  background: #ff1744;
+}
+.courses .cardContainer .card .imgBox,
+.techMeth .cardContainer .card .imgBox {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.courses .cardContainer .card .imgBox .icon,
+.techMeth .cardContainer .card .imgBox .icon {
+  color: #fff;
+  font-size: 80px;
+}
+.courses .cardContainer .card .content,
+.techMeth .cardContainer .card .content {
+  color: #fff;
+  margin: 20px 0;
+  height: calc(100% - 150px);
+  display: flex;
+  flex-direction: column;
+}
+.courses .cardContainer .card .content h3,
+.techMeth .cardContainer .card .content h3 {
+  line-height: 20px;
+  text-align: center;
+}
+.courses .cardContainer .card .content p,
+.techMeth .cardContainer .card .content p {
+  font-size: 14px;
+  text-align: center;
+  margin: 10px;
+}
 
-.contactBox{
+.some {
+  min-height: 80vh;
+  background: #333;
+  margin: 50px;
+  width: calc(100% - 100px);
+  display: flex;
+  align-items: center;
+}
+.some .content {
+  max-width: 800px;
+  color: #fff;
+  margin: 0 100px;
+}
+.some .content h1 {
+  transform: translate(-30px, -20px);
+  font-size: 3em;
+}
+.some .imgBox {
+  width: 300px;
+}
+.some .imgBox img {
+  width: 100%;
+}
+
+.circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  flex-wrap: wrap;
+}
+
+.circles .card {
+  position: relative;
+  width: 250px;
+  height: 300px;
+  margin: 20px;
+  background: linear-gradient(0deg, #1b1b1b, #222);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* align-self: center; */
+  border-radius: 4px;
+  text-align: center;
+  /* overflow: hidden; */
+  transition: 0.5s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+.circles .card:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
+}
+
+.circles .card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(225, 225, 225, 0.03);
+  z-index: 1;
+}
+.percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #000;
+  background: #222;
+  transform: translateX(30%);
+  z-index: 1;
+}
+.percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.text {
+  position: relative;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transform: translateY(20px);
+}
+svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 100;
+}
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #191919;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+  transition: 2s;
+}
+svg circle:nth-child(2) {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 220;
+}
+.card:nth-child(1) svg circle:nth-child(2) {
+  stroke: #00ff43;
+}
+.card:nth-child(2) svg circle:nth-child(2) {
+  stroke: #00a1ff;
+}
+.card:nth-child(3) svg circle:nth-child(2) {
+  stroke: #ff04f2;
+}
+.card:nth-child(4) svg circle:nth-child(2) {
+  stroke: #07128f;
+}
+.card:nth-child(5) svg circle:nth-child(2) {
+  stroke: #ff0;
+}
+
+.contactBox {
   width: 100%;
   min-height: 30vh;
-  background: #3170d6/*#07128f*/;
+  background: #3170d6 /*#07128f*/;
   color: #fff;
   padding: 30px 50px;
   letter-spacing: 2px;
@@ -310,52 +339,52 @@ svg circle:nth-child(2){
   align-items: center;
   justify-content: space-between;
 }
-.contact{
+.contact {
   max-width: 35%;
   left: 0;
 }
-.contact h1{
+.contact h1 {
   margin-bottom: 10px;
   display: inline-block;
   font-size: 2em;
   /* user-select: none; */
 }
-.contact a{
+.contact a {
   display: inline-block;
   position: relative;
   color: #fff;
   text-decoration: none;
   margin: 10px;
 }
-.contact img{
+.contact img {
   filter: invert(1);
   width: 20px;
   user-select: none;
 }
 
-.formBox{
+.formBox {
   position: relative;
   min-width: 750px;
   height: 400px;
   margin: 0px;
   background-color: transparent;
 }
-.formBox h1{
+.formBox h1 {
   color: #fff;
-  font-size: 2em; 
+  font-size: 2em;
   letter-spacing: 3px;
   margin-bottom: 10px;
 }
-.formBox .input{
+.formBox .input {
   position: relative;
 }
-.formBox .input:nth-child(5){
+.formBox .input:nth-child(5) {
   position: absolute;
   left: 380px;
   top: 50%;
   transform: translateY(-55%);
 }
-.formBox .input label{
+.formBox .input label {
   color: #fff;
   font-weight: 500;
   letter-spacing: 0.7px;
@@ -370,7 +399,7 @@ svg circle:nth-child(2){
   transition-timing-function: ease;
 }
 .formBox .input input,
-.formBox .input textarea{
+.formBox .input textarea {
   margin: 20px 0px;
   min-width: 350px;
   max-width: 600px;
@@ -380,276 +409,304 @@ svg circle:nth-child(2){
   background: transparent;
   color: #fff;
   font-size: 15px;
-  text-decoration: none; 
-  box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
+  text-decoration: none;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
-.formBox .input textarea{
+.formBox .input textarea {
   resize: none;
 }
 
 .formBox .input textarea:focus ~ label,
 .formBox .input textarea:valid ~ label,
 .formBox .input input:focus ~ label,
-.formBox .input input:valid ~ label{
+.formBox .input input:valid ~ label {
   top: -5px;
   left: 0px;
   transform: scale(0.9);
   background: #3170d6;
 }
-.formBox input[type="submit"]{
+.formBox input[type="submit"] {
   background-color: transparent;
   padding: 7px 20px;
   margin-top: 15px;
   color: #fff;
   cursor: pointer;
   outline: none;
-  border: none; 
+  border: none;
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 1px;
   border-radius: 5px;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
   transition: 0.5s;
 }
-.formBox input[type="submit"]:hover{
+.formBox input[type="submit"]:hover {
   background-color: #ff01b3;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-footer{
-	width: 100%;
-	padding: 30px;
-	background: #222222;
-	color: #fff;
-	user-select: none;
+footer {
+  width: 100%;
+  padding: 30px;
+  background: #222222;
+  color: #fff;
+  user-select: none;
 }
-a.image{
-    text-decoration: none;
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    bottom: 60px;
-    right: 60px;
+a.image {
+  text-decoration: none;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 999999999;
+  transform: scale(0.8);
+}
+a.image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+@media only screen and (max-width: 1200px) {
+  .navbar .openBtn {
     display: inline-block;
-    border-radius: 50%;
-    overflow: hidden;
-    z-index: 999999999;
-    transform: scale(0.8);
-}
-a.image img{
-    position: relative;
+    z-index: 11;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+  .navbar .logo {
     width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-@media only screen and (max-width: 1200px){
-    .navbar .openBtn{
-       display: inline-block;
-       z-index: 11;
-    }
-    .navbar{
-        flex-direction: column;
-    }
-     .navbar .logo{
-         width: 100%;
-    }	
-    .navbar ul{
-        display: none;
-        position: fixed;
-        width: 100%;
-        min-height: 100vh;
-       align-items: center;
-       justify-content: center;
-        flex-direction: column;
-        background-color: #222;
-        z-index: 10;
-        opacity: 0;
-        transition: 0.3s;
-   }
-    .navbar.active ul{
-        display: flex;
-        opacity: 1;
-    }
-   .navbar ul li a{
-       border: none;
-       font-size: 1em;
-       margin: 15px; 
-       text-align: center;  
-   }
-.contactBox{
+  }
+  .navbar ul {
+    display: none;
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #222;
+    z-index: 10;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .navbar.active ul {
+    display: flex;
+    opacity: 1;
+  }
+  .navbar ul li a {
+    border: none;
+    font-size: 1em;
+    margin: 15px;
+    text-align: center;
+  }
+  .contactBox {
     flex-direction: column;
     justify-content: left;
-}
-.contact{
+  }
+  .contact {
     max-width: 100%;
     min-width: 100%;
-    margin-bottom: 50px; 
-}
-.formBox{
+    margin-bottom: 50px;
+  }
+  .formBox {
     position: relative;
-    min-width: 100%;    
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
-}
-@media only screen and (max-width: 800px){
-.formBox{
+@media only screen and (max-width: 800px) {
+  .formBox {
     height: auto;
-}   
-.formBox .input:nth-child(5){
+  }
+  .formBox .input:nth-child(5) {
     position: relative;
     left: 0px;
     top: 0%;
     transform: translateY(0%);
+  }
 }
-}
-@media only screen and (max-width: 600px){
-.navbar.back {
+@media only screen and (max-width: 600px) {
+  .navbar.back {
     height: 50px;
-}
-.navbar .openBtn{
-   right: 20px;
-   top: 10px;
-   width: 30px;
-   height: 30px;
-   background-size: 20px;
-}
-.navbar .logo a{
-   font-size: 1.5em;
-   font-weight: 600;
-   width: 2.5em;
-   padding: 8px 5px;
-   letter-spacing: 2px;
-}
-section{
+  }
+  .navbar .openBtn {
+    right: 20px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-size: 20px;
+  }
+  .navbar .logo a {
+    font-size: 1.5em;
+    font-weight: 600;
+    width: 2.5em;
+    padding: 8px 5px;
+    letter-spacing: 2px;
+  }
+  section {
     position: relative;
     width: 100%;
     min-height: 60vh;
     padding: 25px;
-}
-.courses{
+  }
+  .courses {
     min-height: 1800px;
     max-height: 2000px;
-}
-.techMeth{
+  }
+  .techMeth {
     max-height: 1600px;
     overflow: hidden;
-}
-.courses .cardContainer,.techMeth .cardContainer{
+  }
+  .courses .cardContainer,
+  .techMeth .cardContainer {
     width: 100%;
     height: calc(280vh);
     margin: 0;
-}
-.courses .cardContainer .card,.techMeth .cardContainer .card{
+  }
+  .courses .cardContainer .card,
+  .techMeth .cardContainer .card {
     width: 300px;
-    height: 400px; 
+    height: 400px;
     margin: 10px 0;
     padding: 20px;
-}
-.some{
+  }
+  .some {
     margin: 0px;
     justify-content: center;
     width: 100%;
-}
-.some .content{
+  }
+  .some .content {
     margin: 0px;
     max-width: auto;
-}
-.some .content h1{
-    transform: translate(-10px,-10px);
+  }
+  .some .content h1 {
+    transform: translate(-10px, -10px);
     font-size: 2em;
-}
-.some .imgBox{
+  }
+  .some .imgBox {
     display: none;
-}
+  }
 
- footer{
+  footer {
     padding: 20px;
-    font-size: 0.8em; 
- }
-.contactBox {
-  padding: 10px 20px;
-}   
-.contact{
-  padding: 0px;
-  letter-spacing: 1px;
-  margin-bottom: 0px; 
+    font-size: 0.8em;
+  }
+  .contactBox {
+    padding: 10px 20px;
+  }
+  .contact {
+    padding: 0px;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+  }
+  .contact h1 {
+    font-size: 1.5em;
+  }
+  .contact a {
+    font-size: 0.8em;
+  }
+  .contact img {
+    width: 15px;
+  }
+  a.image {
+    bottom: 0px;
+    right: 0px;
+  }
+  .formBox h1 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  .formBox input[type="submit"] {
+    margin-top: 0px;
+  }
 }
-.contact h1{
-  font-size: 1.5em;
+@media only screen and (max-width: 400px) {
+  .navbar .openBtn {
+    right: 20px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-size: 20px;
+  }
+  .navbar .logo a {
+    font-size: 1.5em;
+    font-weight: 600;
+    width: 2.5em;
+    padding: 8px 5px;
+    letter-spacing: 2px;
+  }
+  section {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    padding: 25px;
+  }
+  .courses {
+    min-height: 2000px;
+    max-height: 2200px;
+  }
+  .techMeth {
+    max-height: 1600px;
+    overflow: hidden;
+  }
+  .courses .cardContainer,
+  .techMeth .cardContainer {
+    width: 100%;
+    height: calc(280vh);
+    margin: 0;
+  }
+  .courses .cardContainer .card,
+  .techMeth .cardContainer .card {
+    width: 300px;
+    height: 400px;
+    margin: 10px 0;
+    padding: 20px;
+  }
+  .some {
+    margin: 0px;
+    justify-content: center;
+    width: 100%;
+  }
+  .some .content {
+    margin: 0px;
+    max-width: auto;
+  }
+  .some .content h1 {
+    transform: translate(-10px, -10px);
+    font-size: 2em;
+  }
+  .some .imgBox {
+    display: none;
+  }
+  .formBox .input {
+    margin: 20px 0px;
+    min-width: 300px;
+    max-width: 350px;
+  }
+  .formBox .input input,
+  .formBox .input textarea {
+    /*margin: 20px 0px;*/
+    min-width: 300px;
+    max-width: 350px;
+  }
 }
-.contact a{
-  font-size: 0.8em;
+@media only screen and (max-width: 360px) {
+  .formBox .input {
+    margin: 0px;
+    min-width: 250px;
+    max-width: 330px;
+    overflow: hidden;
+  }
+  .formBox .input input,
+  .formBox .input textarea {
+    min-width: 260px;
+    max-width: 310px;
+  }
 }
-.contact img{
-  width: 15px;
-}
-a.image{
-  bottom: 0px;
-  right: 0px;
-}
-.formBox h1{
-  font-size: 1.5em; 
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-.formBox input[type="submit"]{
-  margin-top: 0px;
-}
-}
-@media only screen and (max-width: 400px){
-    .navbar .openBtn{
-       right: 20px;
-       top: 10px;
-       width: 30px;
-       height: 30px;
-       background-size: 20px;
-    }
-    .navbar .logo a{
-       font-size: 1.5em;
-       font-weight: 600;
-       width: 2.5em;
-       padding: 8px 5px;
-       letter-spacing: 2px;
-    }
-    section{
-        position: relative;
-        width: 100%;
-        min-height: 60vh;
-        padding: 25px;
-    }
-    .courses{
-        min-height: 2000px;
-        max-height: 2200px;
-    }
-    .techMeth{
-        max-height: 1600px;
-        overflow: hidden;
-    }
-    .courses .cardContainer,.techMeth .cardContainer{
-        width: 100%;
-        height: calc(280vh);
-        margin: 0;
-    }
-    .courses .cardContainer .card,.techMeth .cardContainer .card{
-        width: 300px;
-        height: 400px; 
-        margin: 10px 0;
-        padding: 20px;
-    }
-    .some{
-        margin: 0px;
-        justify-content: center;
-        width: 100%;
-    }
-    .some .content{
-        margin: 0px;
-        max-width: auto;
-    }
-    .some .content h1{
-        transform: translate(-10px,-10px);
-        font-size: 2em;
-    }
-    .some .imgBox{
-        display: none;
-    }
-}     
-    
