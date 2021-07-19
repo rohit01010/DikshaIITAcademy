@@ -1,24 +1,38 @@
-:root {
-  --black: #232323;
-  --white: #fff;
-}
-
 * {
   font-family: Poppins;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  position: relative;
 }
 body {
-  background: var(--black);
+  background: #232323;
   min-height: 100vh;
   scroll-behavior: smooth;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  left: -10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0d1418;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(87, 88, 88);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(28, 30, 36);
 }
 
 #particles-js {
   height: 100vh;
-  background-color: var(--black);
+  background-color: #232323;
   z-index: -1;
   position: fixed;
   top: 0;
@@ -39,13 +53,13 @@ body {
   z-index: 10;
   transition: 0.5s;
   transition-timing-function: ease-in-out;
-  background-color: transparent;
-  padding: 0 20px;
-  margin-top: 30px;
+  background-color: #fff0;
+  padding: 10px 20px;
+  padding-top: 30px;
+  margin: 20px 0;
 }
 .container .navbar.back {
-  background-color: #222;
-  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
+  background-color: #232323;
   height: 70px;
 }
 .container .navbar .logo a {
@@ -54,15 +68,16 @@ body {
   font-weight: 900;
   position: relative;
   left: 0px;
-  top: 0px;
+  top: -10px;
   width: auto;
   height: 50px;
   padding: 5px;
   letter-spacing: 2px;
   text-align: left;
   text-decoration: none;
-  color: var(--white);
+  color: #fff;
 }
+
 .container .navbar .logo img {
   height: 100%;
 }
@@ -94,7 +109,6 @@ body {
   top: 0;
   list-style-type: none;
 }
-
 .container section {
   width: calc(100% - 60px);
   margin-top: 40px;
@@ -102,6 +116,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-color: #f00;
   z-index: 1;
   margin: 0 30px;
 }
@@ -116,6 +131,7 @@ body {
 .container section .content h1 {
   font-size: 4.5em;
   font-weight: 900;
+  word-spacing: 30px;
   line-height: 1.1em;
   color: #ff0;
   margin-bottom: 20px;
@@ -126,116 +142,80 @@ body {
 }
 
 .container section .slideshow {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   position: relative;
-  width: 640px;
+  min-width: 640px;
   height: 400px;
   transform: scale(0.9);
   user-select: none;
   box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
 }
-.container section .slideshow .mySlides {
-  display: none;
-}
-.container section .slideshow img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Slideshow container */
 .container section .slideshow .slideshow-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  margin: 0px;
-}
-
-/* Next & previous buttons */
-.container section .slideshow .prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.container section .slideshow .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.container section .slideshow .prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.container section .slideshow .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
   position: absolute;
   top: 0;
-  z-index: 200;
+  left: 0px;
+  width: 5120px;
+  height: 400px;
+  animation: slide 21s linear infinite;
 }
-
-/* The dots/bullets/indicators */
-.container section .slideshow .dot {
-  cursor: pointer;
-  height: 10px;
-  width: 10px;
-  margin: 0 5px;
-  background-color: #aaa;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+.container section .slideshow .slideshow-container .mySlides {
+  float: left;
+  height: 400px;
+  width: 640px;
 }
-
-.container section .slideshow .active,
-.dot:hover {
-  transform: scale(1.5);
-  background-color: #fff;
+.container section .slideshow .slideshow-container .mySlides img {
+  height: 100%;
 }
-
-/* Fading animation */
-.container section .slideshow .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
+@keyframes slide {
+  0% {
+    left: 0px;
   }
-  to {
-    opacity: 1;
+  12% {
+    left: 0px;
+  }
+  14% {
+    left: -640px;
+  }
+  26% {
+    left: -640px;
+  }
+  28% {
+    left: -1280px;
+  }
+  40% {
+    left: -1280px;
+  }
+  42% {
+    left: -1920px;
+  }
+  54% {
+    left: -1920px;
+  }
+  56% {
+    left: -2560px;
+  }
+  68% {
+    left: -2560px;
+  }
+  70% {
+    left: -3200px;
+  }
+  82% {
+    left: -3200px;
+  }
+  85% {
+    left: -3840px;
+  }
+  97% {
+    left: -3840px;
+  }
+  100% {
+    left: -4480px;
   }
 }
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .container .results {
   position: relative;
   display: flex;
@@ -267,7 +247,6 @@ body {
   max-width: 320px;
   height: 420px;
   margin: 0 20px;
-  background: #fff;
 }
 .container .results .swiper-container-3d .swiper-slide-shadow-left,
 .container .results .swiper-container-3d .swiper-slide-shadow-right {
@@ -275,8 +254,7 @@ body {
 }
 .container .results .testimonials .card {
   position: relative;
-  width: auto;
-  margin: 0 auto;
+  height: 100%;
   background: #333;
   padding: 40px 20px;
   text-align: center;
@@ -305,6 +283,7 @@ body {
   margin-bottom: 20px;
   color: #fff;
   letter-spacing: 1px;
+  /* user-select: none; */
 }
 .container .results .testimonials .card .content .imgBox {
   width: 150px;
@@ -324,6 +303,7 @@ body {
   color: #fff;
   letter-spacing: 1px;
   word-spacing: 5px;
+  /* user-select: none; */
 }
 .container .results .testimonials .card .content h2 span {
   color: #03a9f4;
@@ -354,6 +334,7 @@ body {
   letter-spacing: 2px;
   max-width: 600px;
   margin: 20px;
+  /* user-select: none; */
   border-bottom: 2px solid #f3f3f3;
 }
 .container .about p {
@@ -361,6 +342,7 @@ body {
   margin: 50px;
   text-align: center;
   font-size: 1.2em;
+  /* user-select: none; */
 }
 .container .about .btn {
   display: inline-block;
@@ -412,7 +394,7 @@ body {
   right: 0px;
   width: 80px;
   height: 80px;
-  background: url("images/quote.png");
+  background: url("https://firebasestorage.googleapis.com/v0/b/dikshaiitacademydemo.appspot.com/o/images%2Fquote.png?alt=media&token=2862b3a9-148f-4137-9760-f88b514b6be8");
   background-position: center;
   background-size: cover;
   opacity: 0.1;
@@ -429,7 +411,7 @@ body {
   left: 0px;
   width: 80px;
   height: 80px;
-  background: url("images/quote.png");
+  background: url("https://firebasestorage.googleapis.com/v0/b/dikshaiitacademydemo.appspot.com/o/images%2Fquote.png?alt=media&token=2862b3a9-148f-4137-9760-f88b514b6be8");
   background-position: center;
   background-size: cover;
   opacity: 0.1;
@@ -464,7 +446,7 @@ body {
   width: 100%;
   min-height: 30vh;
   background: #3170d6;
-  color: #fff;
+  backdrop-filter: blur(2px);
   padding: 30px 50px;
   letter-spacing: 2px;
   margin: 0px;
@@ -475,16 +457,17 @@ body {
 .container .contact {
   max-width: 35%;
   left: 0;
+  color: #ddd;
 }
 .container .contact h1 {
   margin-bottom: 10px;
   display: inline-block;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 .container .contact a {
   display: inline-block;
   position: relative;
-  color: #fff;
+  color: #ddd;
   text-decoration: none;
   margin: 10px;
 }
@@ -493,7 +476,6 @@ body {
   width: 20px;
   user-select: none;
 }
-
 .formBox {
   position: relative;
   min-width: 750px;
@@ -517,7 +499,7 @@ body {
   transform: translateY(-55%);
 }
 .formBox .input label {
-  color: #fff;
+  color: #aaa;
   font-weight: 500;
   letter-spacing: 0.7px;
   font-size: 15px;
@@ -542,12 +524,11 @@ body {
   color: #fff;
   font-size: 15px;
   text-decoration: none;
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .formBox .input textarea {
   resize: none;
 }
-
 .formBox .input textarea:focus ~ label,
 .formBox .input textarea:valid ~ label,
 .formBox .input input:focus ~ label,
@@ -569,12 +550,11 @@ body {
   font-weight: 400;
   letter-spacing: 1px;
   border-radius: 5px;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
   transition: 0.5s;
+  background-color: #2dc200;
 }
 .formBox input[type="submit"]:hover {
-  background-color: #ff01b3;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background-color: #1b7400;
 }
 
 footer {
@@ -583,6 +563,7 @@ footer {
   background: #222222;
   color: #fff;
   user-select: none;
+  text-align: center;
 }
 a.image {
   text-decoration: none;
@@ -692,12 +673,22 @@ a.image img {
     height: 30px;
     background-size: 20px;
   }
+  .container .navbar .logo {
+    position: absolute;
+    top: 0;
+  }
   .container .navbar .logo a {
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: 600;
-    width: 2.5em;
-    padding: 8px 5px;
+    width: 80px;
+    margin: 0px 20px;
+    padding: 0;
+    top: 0;
     letter-spacing: 2px;
+  }
+  .container .navbar .logo a img {
+    width: 100%;
+    object-fit: contain;
   }
   .container section .content h1 {
     font-size: 2.5em;
@@ -797,14 +788,6 @@ a.image img {
     height: 30px;
     background-size: 20px;
   }
-  .container .navbar .logo a {
-    font-size: 1.5em;
-    font-weight: 600;
-    width: auto;
-    height: 45px;
-    padding: 8px 5px;
-    letter-spacing: 2px;
-  }
   .container section .slideshow {
     width: scale(0.4);
   }
@@ -815,7 +798,7 @@ a.image img {
   }
   .formBox .input textarea {
     margin: 10px 0px;
-
+    width: 100%;
     min-width: 300px;
     max-width: 350px;
   }

@@ -10,7 +10,26 @@ body {
   min-height: 100vh;
   background-color: #222;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  left: -10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0d1418;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(87, 88, 88);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(28, 30, 36);
+}
 #particles-js {
   height: 100vh;
   background-color: #232323;
@@ -31,13 +50,12 @@ body {
   z-index: 10;
   transition: 0.5s;
   transition-timing-function: ease-in-out;
-  background-color: transparent;
-  padding: 0 20px;
-  margin-top: 30px;
+  background-color: #fff0;
+  padding: 10px 20px;
+  padding-top: 30px;
 }
 .navbar.back {
-  background-color: #222;
-  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.5);
+  background-color: #232323;
   height: 70px;
 }
 .navbar .logo a {
@@ -385,7 +403,7 @@ svg circle:nth-child(2) {
   transform: translateY(-55%);
 }
 .formBox .input label {
-  color: #fff;
+  color: #aaa;
   font-weight: 500;
   letter-spacing: 0.7px;
   font-size: 15px;
@@ -410,12 +428,11 @@ svg circle:nth-child(2) {
   color: #fff;
   font-size: 15px;
   text-decoration: none;
-  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .formBox .input textarea {
   resize: none;
 }
-
 .formBox .input textarea:focus ~ label,
 .formBox .input textarea:valid ~ label,
 .formBox .input input:focus ~ label,
@@ -437,12 +454,11 @@ svg circle:nth-child(2) {
   font-weight: 400;
   letter-spacing: 1px;
   border-radius: 5px;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
   transition: 0.5s;
+  background-color: #2dc200;
 }
 .formBox input[type="submit"]:hover {
-  background-color: #ff01b3;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background-color: #1b7400;
 }
 footer {
   width: 100%;
@@ -450,6 +466,7 @@ footer {
   background: #222222;
   color: #fff;
   user-select: none;
+  text-align: center;
 }
 a.image {
   text-decoration: none;
@@ -521,7 +538,7 @@ a.image img {
 }
 @media only screen and (max-width: 800px) {
   .formBox {
-    height: auto;
+    height: fit-content;
   }
   .formBox .input:nth-child(5) {
     position: relative;
@@ -541,12 +558,21 @@ a.image img {
     height: 30px;
     background-size: 20px;
   }
+  .navbar .logo {
+    position: absolute;
+    top: 0;
+  }
   .navbar .logo a {
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: 600;
-    width: 2.5em;
-    padding: 8px 5px;
+    width: 80px;
+    margin: 0px 20px;
+    padding: 0;
     letter-spacing: 2px;
+  }
+  .navbar .logo a img {
+    width: 100%;
+    object-fit: contain;
   }
   section {
     position: relative;
@@ -635,13 +661,6 @@ a.image img {
     height: 30px;
     background-size: 20px;
   }
-  .navbar .logo a {
-    font-size: 1.5em;
-    font-weight: 600;
-    width: 2.5em;
-    padding: 8px 5px;
-    letter-spacing: 2px;
-  }
   section {
     position: relative;
     width: 100%;
@@ -686,14 +705,14 @@ a.image img {
     display: none;
   }
   .formBox .input {
-    margin: 20px 0px;
+    margin: 10px 0px;
     min-width: 300px;
     max-width: 350px;
   }
   .formBox .input input,
   .formBox .input textarea {
-    /*margin: 20px 0px;*/
     min-width: 300px;
+    width: 100%;
     max-width: 350px;
   }
 }
